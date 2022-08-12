@@ -1,0 +1,22 @@
+<h1 mat-dialog-title>Edit Task</h1>
+<form class="margin-top" form autocomplete="off" (submit)="editTodoColumn(editedTitle.value)">
+  <div mat-dialog-content>
+
+    <input #editedTitle matInput placeholder="">
+    <mat-form-field appearance="fill">
+      <mat-label>Task Name</mat-label>
+      
+      <mat-select #selected name="selectTask">
+        <mat-option *ngFor="let item of select[0].items; let i=index"  [value]="i">{{item.title}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button mat-dialog-close>close</button>
+    <button mat-raised-button mat-dialog-close color="warn" (click)="deleteTodoColumn(selected)">delete</button>
+    <button type="submit" mat-raised-button mat-dialog-close color="primary">submit</button>
+  </div>
+
+</form>

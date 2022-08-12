@@ -1,0 +1,22 @@
+<h1 mat-dialog-title>New Task</h1>
+<form class="margin-top" form autocomplete="off" (submit)="createNewTodo(newTodoTitle.value, newTodoText.value)">
+  <div mat-dialog-content>
+
+
+    <mat-form-field appearance="fill">
+      <mat-label>Task name</mat-label>
+      <input #newTodoTitle matInput placeholder="">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+      <mat-label>Task Description</mat-label>
+      <textarea #newTodoText matInput placeholder=""></textarea>
+    </mat-form-field>
+
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button mat-dialog-close>Close</button>
+    <button type="submit" mat-raised-button mat-dialog-close color="primary">Submit</button>
+  </div>
+
+</form>

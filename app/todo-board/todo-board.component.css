@@ -1,0 +1,19 @@
+.board-container{
+  display: grid;
+  height: 100%;
+  grid-template-columns: 2em 1fr 2em;
+  grid-template-rows: 2em 1fr;
+  grid-template-areas: ". . empty"
+                        ". board empty";
+}
+.board{
+  display: grid;
+  grid-auto-flow: row;
+  grid-area: board;
+  justify-content: start;
+  grid-auto-flow: column;
+  grid-gap: 1em;
+}
+.empty{
+  grid-area: empty;
+}

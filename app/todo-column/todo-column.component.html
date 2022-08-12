@@ -1,0 +1,12 @@
+<div class="todo-list" cdkDropList [cdkDropListData]="todoColumn.items" (cdkDropListDropped)="drop($event)" cdkDragLockAxis="x" cdkDrag>
+    <div class="first-line">
+        <h3>{{todoColumn.title}}</h3>
+        <span class="amount">{{todoColumn.items.length}}</span>
+
+        <app-edit-todo-column-dialog-button [todoColumn]="todoColumn"></app-edit-todo-column-dialog-button>
+    </div>
+
+    <app-new-todo-dialog-button [todoColumn]="todoColumn"></app-new-todo-dialog-button>
+    <app-todo *ngFor="let todoItem of todoColumn.items" [title]="todoItem.title" [text]="todoItem.text">
+    </app-todo>
+</div>

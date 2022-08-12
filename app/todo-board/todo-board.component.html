@@ -1,0 +1,9 @@
+<div class="board-container" cdkDropList cdkDropListOrientation="horizontal" (cdkDropListDropped)="drop($event)">
+  <div class="board" cdkDropListGroup>
+    <div *ngFor="let todoColumn of todoColumnList">
+      <app-todo-column [todoColumn]="todoColumn"></app-todo-column>
+    </div>
+
+  </div>
+  <div class="empty"></div>
+</div>
